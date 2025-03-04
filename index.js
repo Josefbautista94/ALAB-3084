@@ -74,3 +74,20 @@ for(let i = 1; i < array2.length; i++){
 }
 
 console.log(dataArr);
+
+
+// Part 4: Sorting and Manipulating Data
+
+peopleArray.pop()
+peopleArray.splice(1 , 0,{ id: "48", name: "Barry", occupation: "Runner", age: "25" })
+peopleArray.push({ id: "7", name: "Bilbo", occupation: "None", age: "111" })
+console.log(peopleArray);
+
+let averageAge = 0;
+
+for( let i of peopleArray){
+  averageAge += (Number(i.age))
+}
+
+console.log(`This is the Average : ${averageAge/ peopleArray.length}`);
+
