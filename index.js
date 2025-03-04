@@ -33,10 +33,44 @@ console.log(array2);
 
 
 let firstRow = [];
+let peopleArray = [];
 
 for (let i of array1[0]) {
-  console.log(i.toLowerCase());
   firstRow.push(i.toLowerCase());
 }
 
-console.log(firstRow);
+// console.log(firstRow);
+
+
+for (let i = 1; i < array1.length; i++) {
+  let object = {}; // The object that i would be putting my first row and ppl into
+  for (let j = 0; j < firstRow.length; j++) {
+    object[firstRow[j]] = array1[i][j]; // assigning my key, values here my firstRow[j] are going to be the keys
+    // and array1[i][j] are going to be the values,  object[firstRow[j]] = array1[i][j]; would assign the values perfectly.
+    //first [i] index is going to be the rows
+    // second [j] index is going to be the columns 
+  }
+  peopleArray.push(object);
+}
+
+console.log(peopleArray);
+
+let firstRow2 = []
+let dataArr = []
+
+for(let i of array2[0]){
+  firstRow2.push(i.toLowerCase());
+}
+
+console.log(firstRow2);
+
+for(let i = 1; i < array2.length; i++){
+  let object = {};
+
+  for(let j = 0; j < firstRow2.length; j++){
+    object[firstRow2[j]] = array2[i][j];
+  }
+  dataArr.push(object)
+}
+
+console.log(dataArr);
