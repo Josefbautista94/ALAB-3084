@@ -99,7 +99,7 @@ for(let i = 4 ; i < finalArr.length; i +=5 ){ // here we start at index 4 to add
   finalArr.splice(i, 0, "\n") // splicing it every i we land on
 }
 
-let csvString1 = finalArr.join(" "); // joing this to create a string
+let csvString1 = finalArr.join(","); // joing this to create a string
 
 //New Csv
 console.log(csvString1);
