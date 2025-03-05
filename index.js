@@ -46,17 +46,17 @@ console.log(peopleArray);
 
 // Part 4: Sorting and Manipulating Data
 
-peopleArray.pop()
-peopleArray.splice(1 , 0,{ id: "48", name: "Barry", occupation: "Runner", age: "25" })
-peopleArray.push({ id: "7", name: "Bilbo", occupation: "None", age: "111" })
+peopleArray.pop() // removing last item in the array
+peopleArray.splice(1 , 0,{ id: "48", name: "Barry", occupation: "Runner", age: "25" }) //placing this obj in index 1(first argument) and 0 on the second argument cus im not removing anything
+peopleArray.push({ id: "7", name: "Bilbo", occupation: "None", age: "111" }) // pushing item to the last index of the array
 
-let averageAge = 0;
+let averageAge = 0; 
 
 for( let i of peopleArray){
-  averageAge += (Number(i.age))
+  averageAge += (Number(i.age)) // adding the sum of ages
 }
 
-console.log(`This is the Average : ${averageAge/ peopleArray.length}`);
+console.log(`This is the Average : ${averageAge/ peopleArray.length}`); // dividing by the number of people
 
 // Part 5: Full Circle
 // As a final task, transform the final set of data back into CSV format.
@@ -73,12 +73,13 @@ console.log(`This is the Average : ${averageAge/ peopleArray.length}`);
 // put it in the begginging of the array once we convert the values into array as well
 // make the array of objects back into string format
 
-let header1 = Object.keys(peopleArray[0]);
+let header1 = Object.keys(peopleArray[0]); // Extracts all keys (column headers) from the first object in peopleArray.(Just learned this today)
+
 
 //Putting the first letter in every string in the array capital since thats how it was at first.
 let finalHeader1 = [];
 for(let i = 0; i < header1.length; i++){
-let caps = header1[i][0].toUpperCase() + header1[i].slice(1);
+let caps = header1[i][0].toUpperCase() + header1[i].slice(1); // [i] is the current index we are and [0] would be the first character of the string we are in
 finalHeader1.push(caps);
 }
 console.log(finalHeader1)
@@ -87,18 +88,18 @@ console.log(finalHeader1)
 let arr1 = []
 
 for (let i = 1; i < peopleArray.length; i++){
-  arr1.push(Object.values(peopleArray[i]));
+  arr1.push(Object.values(peopleArray[i])); // pushing all the values into a seperate array
 }
 
-arr1 = arr1.flat();
+arr1 = arr1.flat(); // flattening nested array? not too sure if I did this right.
 
-let finalArr = finalHeader1.concat(arr1);
+let finalArr = finalHeader1.concat(arr1); // combing both arrays
 
-for(let i = 4 ; i < finalArr.length; i +=5 ){
-  finalArr.splice(i, 0, "\n")
+for(let i = 4 ; i < finalArr.length; i +=5 ){ // here we start at index 4 to add the \n but we increment by 5 bcus of the extra \n that we are adding every 4 indexes
+  finalArr.splice(i, 0, "\n") // splicing it every i we land on
 }
 
-let csvString1 = finalArr.join(",");
+let csvString1 = finalArr.join(" "); // joing this to create a string
 
 //New Csv
 console.log(csvString1);
